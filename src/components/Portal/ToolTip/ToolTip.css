@@ -1,0 +1,53 @@
+/* Tooltip.css */
+.tooltip-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip-popup {
+  position: absolute;
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0; /* 初始隱藏 */
+  transition: opacity 0.3s ease; /* 動畫過渡效果 */
+}
+
+/* 定義不同方向的 Tooltip 樣式 */
+.tooltip-popup.top {
+  transform: translate(-50%, -100%);
+}
+
+.tooltip-popup.bottom {
+  transform: translate(-50%, 0);
+}
+
+.tooltip-popup.left {
+  transform: translate(-100%, -50%);
+}
+
+.tooltip-popup.right {
+  transform: translate(0, -50%);
+}
+
+/* 顯示 Tooltip 時，應該加入 visible 類名 */
+.tooltip-popup.visible {
+  opacity: 1; /* 顯示時的透明度 */
+}
+
+.tooltip-content {
+  text-align: center;
+}
+
+/* 手機版 Tooltip 樣式調整 */
+@media (max-width: 768px) {
+  .tooltip-popup {
+    padding: 10px 16px;
+    font-size: 16px;
+    white-space: normal; /* 手機版允許文字換行 */
+  }
+}
